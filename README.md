@@ -50,11 +50,11 @@ run 'npm install -g ionic@latest cordova@latest'
 run 'npm install xxxx --save' where xxxx is the failed import name.
 example: 'npm install @angular/router --save'
 
--ionic cordova platform add android for android deployment
-
 #### To run the app in a browser, run 'ionic serve'
 
 #### To run the app in a laboratory app simulator, run 'ionic serve -l'
 You'll be prompted to install the laboratory enviroinment.
 
 #### To run it on a device, use  - ionic cordova run android --device.
+
+run 'ionic cordova platform add android' for android deployment initialization
