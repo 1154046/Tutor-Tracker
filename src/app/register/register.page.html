@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar animated color = "dark">
+    <ion-title class = "heading">"Tutor Tracker"</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section text-center>
+    <ion-icon name="contact" style = "font-size: 4.0em"></ion-icon>
+    <h1 class = "heading">"New User"</h1>
+  </section>
+    
+  <ion-list>
+    <ion-item>
+      <ion-label class="text" position = "floating">Wits Email</ion-label>
+      <ion-input class="text" type = "text" [(ngModel)] = "email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="text" position = "floating">Password</ion-label>
+      <ion-input class="text" type = "password" [(ngModel)] = "password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="text" position = "floating">Confirm Password</ion-label>
+      <ion-input class="text" type = "password" [(ngModel)] = "confirm_password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button class="btn" fill = "solid" expand = "block" color = "dark" (click) = "register()">Signup</ion-button>
+
+</ion-content>

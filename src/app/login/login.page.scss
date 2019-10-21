@@ -1,0 +1,33 @@
+ion-content{
+    --ion-background-color: white;
+}
+
+ion-alert{
+    --background: rgb(91, 158, 179) !important;
+}
+
+.heading{
+    font-family: 'heading-font';
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center
+}
+
+.text{
+    font-family: 'heading-font';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center
+}
+
+.btn {
+    font-family: 'heading-font';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 15px;
+}

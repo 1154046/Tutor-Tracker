@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color = "dark">
+    <ion-title class = "heading">"Validation."</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs>
+  <ion-tab-bar color = "dark" slot = "bottom">
+
+    <ion-tab-button (click) = "home()">
+      <ion-icon name = "home"></ion-icon>
+      <ion-label class = "text">Home.</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "messages()">
+      <ion-icon name = "chatbubbles" ></ion-icon>
+      <ion-label class = "text">Messages.</ion-label>
+    </ion-tab-button>  
+
+    <ion-tab-button (click) = "logout()">
+      <ion-icon name = "log-out"></ion-icon>
+      <ion-label class = "text">logout.</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+
+
+<ion-content padding>
+  <section>
+  <h1 class = "text"> Click "Scan Code" to Scan QR Code</h1>  
+  </section>
+  
+  <ion-label></ion-label>
+
+  <ion-button class = "btn" icon-left fill = "solid" expand = "block" color = "dark" (click) = "scan_code()">
+    <ion-icon name="qr-scanner"></ion-icon>
+    Scan Code
+  </ion-button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Lesson from Scan: {{ scannedCode }}
+    </ion-card-content>
+  </ion-card> 
+
+</ion-content>
+
+
+
