@@ -1,11 +1,15 @@
 # TutorTracker-Ionic
 
-The Tutor App is a web based mobile application designed for both Android and IOS devices. The app is designed as an attempt to simplify Tutor payments by the university and 
+The Tutor App is a mobile application designed for both Android and IOS devices. The app is designed as an attempt to simplify Tutor payments by the university and 
 
 The App : i. Allows user registration
          ii. Allows user login
-        iii. Allows user to reset password
-         iv. Has checks to determine whether person loggin in is Tutor or Lecturer, and redirects them accordingly.
+         iii. Has checks to determine whether person loggin in is Tutor or Lecturer, and redirects them accordingly.
+         iv. Allows both the tutor and lectuer to edit their profile.
+         v. Allows the lecturer to add and remove courses to generate the timetable.
+         vi. Allows the tutor to download the timetable for the courses the tutor is tutoring.
+         vii. Allows the tutor to generae the QR Code so that lecturer can scan the generated QR Code to append the payment.
+         viii. Allows both the tutor and the lecturer to post on the forum.
 
 ### Prerequisites:
 The System requires ionic 4-Framework to be compiled successfully.
