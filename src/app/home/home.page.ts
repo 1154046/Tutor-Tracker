@@ -21,8 +21,16 @@ export class HomePage {
     this.router.navigate(['home']);
   }
 
+  feed() {
+    this.router.navigate(['/tabs/feed']);
+  }
+
   messages() {
     this.router.navigate(['messages']);
+  }
+
+  upload() {
+    this.router.navigate(['/tabs/uploader']);
   }
 
   logout() {
