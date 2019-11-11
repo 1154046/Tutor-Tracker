@@ -22,8 +22,12 @@ export class HomeLecturerPage implements OnInit {
     this.router.navigate(['home']);
   }
 
-  messages() {
-    this.router.navigate(['messages']);
+  feed() {
+    this.router.navigate(['/tabs/feed']);
+  }
+
+  upload() {
+    this.router.navigate(['/tabs/uploader']);
   }
 
   scan() {
