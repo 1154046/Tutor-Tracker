@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 // import * as firebase from 'firebase/app';
 // import { snapshotToArray } from '../../app/env';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-lecturer-scan',
@@ -16,14 +17,18 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 export class LecturerScanPage implements OnInit {
 
   qrcode: string;
-  qrData = null;
-  createdCode = null;
-  scannedCode = null;
+  qrData = '';
+  createdCode = '';
+  scannedCode = '';
+  userID = '';
+  courseCode = '';
+  paymentReference: AngularFirestoreDocument;
 
   constructor( public router: Router,
                public afAuth: AngularFireAuth,
                public alert: AlertController,
-               private barcodeScanner: BarcodeScanner) {}
+               private barcodeScanner: BarcodeScanner,
+               public afstore: AngularFirestore) {}
 
 
   ngOnInit() {
@@ -55,6 +60,15 @@ export class LecturerScanPage implements OnInit {
           console.log('mid');
           this.scannedCode = barcodeData.text;
       });
+      this.courseCode = this.scannedCode.substring(0, 7);
+      this.userID = this.scannedCode.substring(11, 39);
+      console.log(this.userID);
+      this.paymentReference = this.afstore.doc(`users/${this.userID}/payments/${this.courseCode}`);
+
+      // this.afstore.doc(`users/payments/${this.userID}`).set({
+      //   scannedCode
+      // });
+
       console.log('sbu-exit');
       return;
     } catch (err) {
@@ -77,3 +91,7 @@ export class LecturerScanPage implements OnInit {
   }
 
 }
+
+
+
+
