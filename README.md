@@ -4,8 +4,8 @@
 
 The Tutor App is a mobile application designed for both Android and IOS devices. The app is designed as an attempt to simplify Tutor payments by the university and 
 
-The App : i. Allows user registration
-         ii. Allows user login
+The App : i. Allows user registration.
+         ii. Allows user login.
          iii. Has checks to determine whether person loggin in is Tutor or Lecturer, and redirects them accordingly.
          iv. Allows both the tutor and lectuer to edit their profile.
          v. Allows the lecturer to add and remove courses to generate the timetable.
