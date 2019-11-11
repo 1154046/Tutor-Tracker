@@ -26,5 +26,19 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  local_dir: build
   on:
     branch: master
+
+
+
+
+
+# before_install:
+# install:
+# before_script:
+# script:
+# after_success:
+# after_failure:
+# after_script:
+# before_deploy:
