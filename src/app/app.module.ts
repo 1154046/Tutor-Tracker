@@ -18,6 +18,15 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
+import { HttpModule } from '@angular/http';
+import { UserService } from '../app/users.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AuthService } from '../app/auth.service';
+import { ShareModule } from '../app/share/share.module';
+import { AngularFireFunctionsModule, FunctionsRegionToken } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,13 +37,22 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
             AngularFireModule.initializeApp(firebaseConfig),
             AngularFireAuthModule,
             // BarcodeScanner,
-            NgxQRCodeModule
+            NgxQRCodeModule,
+            AngularFirestoreModule,
+            // tslint:disable-next-line: deprecation
+            HttpModule,
+            ShareModule,
+            AngularFireFunctionsModule
                             ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    BarcodeScanner
+    BarcodeScanner,
+    AngularFirestore,
+    UserService,
+    AuthService,
+    { provide: FunctionsRegionToken, useValue: 'us-central1' }
   ],
   bootstrap: [AppComponent]
 })

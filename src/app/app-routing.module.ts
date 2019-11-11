@@ -14,6 +14,11 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'admin-courses', loadChildren: './admin-courses/admin-courses.module#AdminCoursesPageModule' },
   { path: 'lecturer-scan', loadChildren: './lecturer-scan/lecturer-scan.module#LecturerScanPageModule' },
+  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'feed', loadChildren: './feed/feed.module#FeedPageModule' },
+  { path: 'post', loadChildren: './post/post.module#PostPageModule' },
+  { path: 'uploader', loadChildren: './uploader/uploader.module#UploaderPageModule' },
+  { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
 ];
 
 @NgModule({
