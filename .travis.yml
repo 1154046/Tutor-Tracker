@@ -3,6 +3,6 @@ node_js:
   - node
   
 before_install:
-  - npm i -g 6.11.3
+  - npm i -g 5.1.0
   
 cache: npm
