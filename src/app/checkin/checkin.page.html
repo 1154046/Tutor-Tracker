@@ -4,8 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-
-<ion-tabs>
+<!-- <ion-tabs>
   <ion-tab-bar color = "dark" slot = "bottom">
 
     <ion-tab-button (click) = "home()">
@@ -24,7 +23,7 @@
     </ion-tab-button>
 
   </ion-tab-bar>
-</ion-tabs>
+</ion-tabs> -->
 
 
 
@@ -45,7 +44,7 @@
     <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
     <!-- <ngx-qrcode [(qrc-value)]="createdCode"></ngx-qrcode> -->
     <ion-card-content>
-    <p> Class/Lab: {{ createdCode }} </p>
+    <p> Class/Lab: {{ createdCode }} - {{userID}} </p>
     </ion-card-content>
   </ion-card>
 

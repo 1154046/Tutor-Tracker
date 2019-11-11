@@ -6,6 +6,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { AlertController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { UserService } from '../users.service';
 
 @Component({
   selector: 'app-checkin',
@@ -17,11 +18,13 @@ export class CheckinPage implements OnInit {
   qrData = null;
   createdCode = null;
   scannedCode = null;
-
+  userID = '';
   constructor( public router: Router,
                public afAuth: AngularFireAuth,
-               public alert: AlertController) {}
-
+               public alert: AlertController,
+               public user: UserService) {
+                this.userID = user.getUID();
+               }
 
   ngOnInit() {
   }
@@ -43,8 +46,6 @@ export class CheckinPage implements OnInit {
             // this.presentAlert();
           });
   }
-
-
 
   async create_code() {
     if (this.qrData === null) {
