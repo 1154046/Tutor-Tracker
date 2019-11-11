@@ -4,31 +4,43 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+import { UserService } from '../users.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
+  // tslint:disable:no-inferrable-types
   // tslint:disable: variable-name
+  // tslint:disable:indent
+  // tslint:disable: align
+
+
   // username: string;
-  email: string;
-  password: string;
-  confirm_password: string;
+  email: string = '';
+  password: string = '';
+  confirm_password: string = '';
+
+  // Possible Errors
   error_1 = 'createuserwithemailandpassword failed: Second argument "password" must be a valid string';
   error_2 = '';
+
   constructor( public router: Router,
                public afAuth: AngularFireAuth,
-               public alert: AlertController ) { }
+               public alert: AlertController,
+               public afstore: AngularFirestore,
+		           public user: UserService ) { }
 
   ngOnInit() {
   }
 
   async register() {
     const { email, password, confirm_password } = this;
-    let user: string = email;
-    user = user.toLowerCase();
+    let username: string = email;
+    username = username.toLowerCase();
 
     if ( password !== confirm_password ) {
       this.showAlert('Error', 'Passwords do not match');
@@ -60,11 +72,21 @@ export class RegisterPage implements OnInit {
     try {
         const res = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
         console.log(res);
+
+        this.afstore.doc(`users/${res.user.uid}`).set({
+          username
+        });
+
+        this.user.setUser({
+          username,
+          uid: res.user.uid
+        });
+
         this.showAlert('Registration Successful', this.email);
         if ( this.email.includes('students')) {
-          this.router.navigate(['home']);
+          this.router.navigate(['/tabs']);
         } else {
-          this.router.navigate(['home-lecturer']);
+          this.router.navigate(['/tabs']);
         }
     } catch ( err ) {
         console.dir(err);
