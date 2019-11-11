@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { UserService } from '../users.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
   password: string = '';
   constructor( public router: Router,
                public afAuth: AngularFireAuth,
-               public alert: AlertController ) { }
+               public alert: AlertController,
+               public user: UserService ) { }
 
   ngOnInit() {
   }
@@ -44,18 +46,39 @@ export class LoginPage implements OnInit {
       }
 
       if (!user.includes('students')) {
-        const res = this.afAuth.auth.signInWithEmailAndPassword(username, password);
-        this.showAlert('Welcome Lecturer', this.username);
-        this.router.navigate(['home-lecturer']);
+        const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+        if (res.user) {
+          this.user.setUser({
+            username,
+            uid: res.user.uid
+          });
+          this.showAlert('Welcome Lecturer', this.username);
+          this.router.navigate(['/tabs']);
+        }
+        // this.router.navigate(['home-lecturer']);
       } else if ( user.includes('admin') ) {
-        const res = this.afAuth.auth.signInWithEmailAndPassword(username, password);
-        this.showAlert('Welcome', 'Admin');
-        this.router.navigate(['admin']);
+        const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+
+        if (res.user) {
+          this.user.setUser({
+            username,
+            uid: res.user.uid
+          });
+
+          this.showAlert('Welcome', 'Admin');
+          this.router.navigate(['/tabs']);
+        }
       } else {
         const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
-        console.log(res);
-        this.showAlert('Welcome Tutor', this.username);
-        this.router.navigate(['home']);
+        if (res.user) {
+          this.user.setUser({
+            username,
+            uid: res.user.uid
+          });
+          console.log(res);
+          this.showAlert('Welcome Tutor', this.username);
+          this.router.navigate(['/tabs']);
+        }
       }
     } catch ( err ) {
         console.dir(err);
