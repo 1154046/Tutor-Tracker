@@ -1,44 +1,28 @@
-# language: node_js
-# node_js:
-#   - 13.1.0
-
-# cache: npm
-
-# install:
-#   - npm install 
-
-# script:
-#   - npm test
-
 language: node_js
-node_js: 
-- 10.16.3
-cache: npm 
+node_js:
+ - "13"
+ 
+cache: npm
 
-install: 
-  - npm install
-  - yarn install
-script:
-  - npm test
-  - yarn run build
+branches:
+ only:
+ - master
 
-deploy: 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+ 
+before_script:
+ - npm install -g cordova ionic
+
+deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local_dir: build
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  
+  keep_history: true
   on:
     branch: master
-
-
-
-
-
-# before_install:
-# install:
-# before_script:
-# script:
-# after_success:
-# after_failure:
-# after_script:
-# before_deploy:
