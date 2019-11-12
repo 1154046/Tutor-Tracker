@@ -20,7 +20,7 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-		reporters: ['coverage'],
+		
 	preprocessors: {
 		"**/lib/*js": "coverage"
 	},
@@ -28,11 +28,8 @@ module.exports = function (config) {
 		type: "lcov",
 		dir: "coverage/"
 	},
-	plugins: [
-		'karma-coverage',
-	]
-	
-    reporters: ['progress', 'kjhtml'],
+	plugins: ['karma-coverage',]
+    reporters: ['progress', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
