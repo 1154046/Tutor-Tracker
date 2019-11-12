@@ -2,6 +2,26 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+@font-face{
+  font-family: 'heading-font';
+  src: url("../assets/fonts/Chocolate.ttf");
+}
+
+ion-alert{
+  --background: rgb(175, 200, 207) !important;
+  font-family: 'heading-font';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+  border-top: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: 2px solid rgb(0, 0, 0);
+  box-shadow: none;
+  border-radius: 5px;
+}
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;

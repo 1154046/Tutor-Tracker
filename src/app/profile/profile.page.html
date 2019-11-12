@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color = "dark">
+    <ion-title class = "heading">"PROFILE"</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-tabs>
+	<ion-tab-bar color = "dark" slot = "bottom">
+	
+		<ion-tab-button (click) = "home()">
+		<ion-icon name = "home"></ion-icon>
+		<ion-label class = "text-tab">Home.</ion-label>
+		</ion-tab-button>
+	
+		<ion-tab-button (click) = "feed()">
+		<ion-icon name = "albums" ></ion-icon>
+		<ion-label class = "text-tab">Forum.</ion-label>
+		</ion-tab-button>  
+	
+		<ion-tab-button (click) = "upload()">
+		<ion-icon name = "add" ></ion-icon>
+		<ion-label class = "text-tab">Post.</ion-label>
+		</ion-tab-button>  
+	
+		<ion-tab-button (click) = "logout()">
+		<ion-icon name = "log-out"></ion-icon>
+		<ion-label class = "text-tab">logout.</ion-label>
+		</ion-tab-button>
+	
+	</ion-tab-bar>
+</ion-tabs>
+
+<ion-content padding>
+
+	<!-- <app-loading *ngIf="!posts"></app-loading> -->
+
+	<div id="profile-info" *ngIf="username">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="4" class="user-image">
+					<ion-card class="card">
+						<!-- <ion-card-header class="heading"></ion-header> -->
+						<ion-img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
+					</ion-card>
+				</ion-col>
+				<ion-col size="8">
+					<h3 class="text">{{ username }}</h3>
+					<ion-button class="btn" routerLink="../edit-profile">Edit Profile</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+
+	<h2 class = "heading">Posts you've made. :)</h2>
+
+
+	<ion-grid>
+		<div id="images" *ngIf="posts">		
+		
+			<ion-col col-9 class="ion-text-center" class="image" *ngFor="let post of posts">
+				<ion-card class="post_card">
+					<!-- <ion-card-header class="text"></ion-card-header> -->
+					<img (click)="goTo(post)" class="main-image" src="https://ucarecdn.com/{{ post }}/-/scale_crop/200x200/center/" />
+				</ion-card>
+			</ion-col>
+		
+		</div>
+	</ion-grid>
+</ion-content>

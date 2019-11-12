@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color = "dark">
+    <ion-title class = "heading">"TUTOR"</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab-bar color = "dark" slot = "bottom">
+
+    <ion-tab-button (click) = "home()">
+      <ion-icon name = "home"></ion-icon>
+      <ion-label class = "text-tab">Home.</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "feed()">
+      <ion-icon name = "albums" ></ion-icon>
+      <ion-label class = "text-tab">Forum.</ion-label>
+    </ion-tab-button>  
+
+    <ion-tab-button (click) = "upload()">
+      <ion-icon name = "add" ></ion-icon>
+      <ion-label class = "text-tab">Post.</ion-label>
+    </ion-tab-button>  
+
+    <ion-tab-button (click) = "logout()">
+      <ion-icon name = "log-out"></ion-icon>
+      <ion-label class = "text-tab">logout.</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size = "2">
+        <ion-icon style = "font-size: 4em" name="contact"></ion-icon>
+      </ion-col>
+      <ion-col><h1 class = "title"> Welcome Witsie. :) </h1></ion-col>
+    </ion-row>
+  
+    <ion-row>
+
+      <ion-col>
+        <ion-card (click) = "checkin()" class = "checkin_card" text-center padding color = "black" fill = "outline">
+          <ion-img src="../../assets/imgs/checkin.png"></ion-img>
+          <h2 class = "text">Check-in</h2>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+          <ion-card (click) = "download_timetable()" class = "timetable_card" text-center padding color = "black" fill = "outline">
+          <ion-img src="../../assets/imgs/timetable.png"></ion-img>
+          <h2 class = "text">Download Timetable</h2>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col>
+        <ion-card (click) = "req_payment()" class = "payment_card" text-center padding color = "black" fill = "outline">
+          <ion-img src="../../assets/imgs/card.png"></ion-img>
+          <h2 class = "text">Payment Sheet</h2>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class = "profile_card" text-center padding color = "black" fill = "outline">
+          <ion-img (click) = "profile()" src="../../assets/imgs/profile.jpg"></ion-img>
+          <h2 class = "text">Edit Profile</h2>
+        </ion-card>
+      </ion-col>
+
+    </ion-row> 
+
+
+    <!-- <ion-button class = "btn" icon-right fill = "solid" expand = "block" color = "dark" (click) = "logout()">
+      <ion-icon name="log-out"></ion-icon>
+      log-out
+    </ion-button> -->
+
+    <ion-row>
+
+      <ion-col>
+        <ion-card class = "blank_card">
+        <h2 class = "blank-text">hack</h2>     
+        </ion-card>
+      </ion-col>
+    
+      <ion-col>
+        <ion-card class = "blank_card">
+        <h2 class = "blank-text">hack</h2>     
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>  
