@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/1154046/Tutor-Tracker.svg?branch=master)](https://travis-ci.org/1154046/Tutor-Tracker)
-
+[![Coverage Status](https://coveralls.io/repos/github/1154046/Tutor-Tracker/badge.svg?branch=master)](https://coveralls.io/github/1154046/Tutor-Tracker?branch=master)
 # TutorTracker-Ionic
 
 The Tutor App is a mobile application designed for both Android and IOS devices. The app is designed as an attempt to simplify Tutor payments by the university and 
