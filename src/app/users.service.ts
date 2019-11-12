@@ -28,17 +28,11 @@ export class UserService {
 		return this.user.username;
 	}
 
-	reAuth(username: string, password: string) {
-		return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(username + '@codedamn.com', password));
-	}
 
 	updatePassword(newpassword: string) {
 		return this.afAuth.auth.currentUser.updatePassword(newpassword);
 	}
 
-	updateEmail(newemail: string) {
-		return this.afAuth.auth.currentUser.updateEmail(newemail + '@codedamn.com');
-	}
 
 	async isAuthenticated() {
 		if (this.user) { return true; }
