@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { ShareService } from './share.service';
+// import { ShareService } from './share.service';
 
-describe('ShareService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+// describe('ShareService', () => {
+//   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    const service: ShareService = TestBed.get(ShareService);
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     const service: ShareService = TestBed.get(ShareService);
+//     expect(service).toBeTruthy();
+//   });
+// });
