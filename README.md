@@ -6,12 +6,13 @@ The Tutor App is a mobile application designed for both Android and IOS devices.
 
 The App : i. Allows user registration.
          ii. Allows user login.
-         iii. Has checks to determine whether person loggin in is Tutor or Lecturer, and redirects them accordingly.
+         iii. Has checks to determine whether person logging in is Tutor or Lecturer, and redirects them accordingly.
          iv. Allows both the tutor and lectuer to edit their profile.
          v. Allows the lecturer to add and remove courses to generate the timetable.
          vi. Allows the tutor to download the timetable for the courses the tutor is tutoring.
-         vii. Allows the tutor to generae the QR Code so that lecturer can scan the generated QR Code to append the payment.
-         viii. Allows both the tutor and the lecturer to post on the forum.
+         vii. Allows the tutor to generate the QR Code so that lecturer can scan the generated QR Code to append the payment for that                 specific course the tutor generated the QR code for.
+         viii. Allows the tutor to view their pending payment.
+	xi.Allows both the tutor and the lecturer to post on the forum.
 
 ### Prerequisites:
 The System requires ionic 4-Framework to be compiled successfully.
